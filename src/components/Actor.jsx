@@ -18,20 +18,21 @@ const Actor = ({ actores, setActores }) => {
       }
     };
     obtenerInformacionApi();
-  });
+  }, []);
 
   return (
     <>
+      <Col span={2}>
+        <div className={styles.boton}>
+          <Button type="primary" onClick={() => setActores("")}>
+            Regresar
+          </Button>
+        </div>
+      </Col>
       {informacion.map((element) => (
         <div key={element.id}>
           <Row>
             <Col span={6} className={styles.containerActor}>
-              <div className={styles.boton}>
-                <Button type="primary" onClick={() => setActores("")}>
-                  Regresar
-                </Button>
-              </div>
-
               <Image
                 src={`https://image.tmdb.org/t/p/original/${element.profile_path}`}
                 width={200}
@@ -51,7 +52,7 @@ const Actor = ({ actores, setActores }) => {
 
               <br />
             </Col>
-            <Col span={18} className={styles.containerPeliculas}>
+            <Col span={16} className={styles.containerPeliculas}>
               <h1>Películas : </h1>
               {element.known_for.map((pelis) => (
                 <>
@@ -61,12 +62,17 @@ const Actor = ({ actores, setActores }) => {
                   <Image
                     src={`https://image.tmdb.org/t/p/original/${pelis.poster_path}`}
                     width={100}
-                    alt='Poster de Pelicula'
+                    alt="Poster de Pelicula"
                   />
                   <br />
                   <span className={styles.resumen}>{pelis.overview}</span>
 
-                  <h3>Fecha de estreno : {formatearFecha(pelis.release_date)}</h3>
+                  <h3>
+                    Fecha de estreno :
+                    {pelis.release_date
+                      ? formatearFecha(pelis.release_date)
+                      : formatearFecha(pelis.first_air_date)}
+                  </h3>
                   <br />
                 </>
               ))}
