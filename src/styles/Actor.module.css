@@ -1,0 +1,24 @@
+.containerActor {
+   padding: 2rem;
+   text-align:center;
+  }
+
+  .containerPeliculas{
+
+    padding: 4rem;
+   text-align:left;
+    align-items: center;
+  }
+
+  .votes{
+      text-align: right;
+  }
+  .resumen{
+      text-justify: auto;
+  }
+  .boton{
+      
+      align-items: center;
+      padding-bottom: 1rem;
+      
+  }

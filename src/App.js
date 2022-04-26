@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Actor from "./components/Actor";
+import ImagenUpload from "./components/ImagenUpload";
 
 function App() {
+
+
+  const [actores, setActores] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {actores ? <Actor actores={actores} setActores={setActores} /> : <ImagenUpload actores={actores} setActores={setActores} />}
+    </>
   );
 }
 
