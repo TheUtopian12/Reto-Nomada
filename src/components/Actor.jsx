@@ -60,6 +60,7 @@ const Actor = ({ actores, setActores }) => {
                   <Image
                     src={`https://image.tmdb.org/t/p/original/${pelis.poster_path}`}
                     width={100}
+                    alt='Poster de Pelicula'
                   />
                   <br />
                   <span className={styles.resumen}>{pelis.overview}</span>

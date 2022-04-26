@@ -12,6 +12,8 @@ const props = {
   },
   action: 'https://whois.nomada.cloud/upload',
   name: 'file',
+  multiple:false,
+  accept:".jpg,.png,.JPG,.PNG"
   
 };
 
