@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Row, Col, Image, Tag } from "antd";
 import styles from "../styles/Actor.module.css";
+import { formatearFecha } from "../helpers";
 
 const Actor = ({ actores, setActores }) => {
   const [informacion, setInformacion] = useState([]);
@@ -51,7 +52,7 @@ const Actor = ({ actores, setActores }) => {
               <br />
             </Col>
             <Col span={18} className={styles.containerPeliculas}>
-              <h1>Peliculas : </h1>
+              <h1>Películas : </h1>
               {element.known_for.map((pelis) => (
                 <>
                   <h2 key={pelis.id}>{pelis.original_title} </h2>
@@ -65,7 +66,7 @@ const Actor = ({ actores, setActores }) => {
                   <br />
                   <span className={styles.resumen}>{pelis.overview}</span>
 
-                  <h3>Fecha de estreno : {pelis.release_date}</h3>
+                  <h3>Fecha de estreno : {formatearFecha(pelis.release_date)}</h3>
                   <br />
                 </>
               ))}
