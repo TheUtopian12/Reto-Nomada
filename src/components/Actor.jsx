@@ -22,7 +22,12 @@ const Actor = ({ actores, setActores }) => {
 
   return (
     <>
-      <Col span={2}>
+
+    
+
+
+
+      <Col xs={1} sm={4} md={6} lg={2} xl={2}>
         <div className={styles.boton}>
           <Button type="primary" onClick={() => setActores("")}>
             Regresar
@@ -32,7 +37,7 @@ const Actor = ({ actores, setActores }) => {
       {informacion.map((element) => (
         <div key={element.id}>
           <Row>
-            <Col span={6} className={styles.containerActor}>
+            <Col xs={1} sm={4} md={6} lg={6} xl={6} className={styles.containerActor}>
               <Image
                 src={`https://image.tmdb.org/t/p/original/${element.profile_path}`}
                 width={200}
@@ -52,7 +57,7 @@ const Actor = ({ actores, setActores }) => {
 
               <br />
             </Col>
-            <Col span={16} className={styles.containerPeliculas}>
+            <Col xs={22} sm={16} md={12} lg={16} xl={16} className={styles.containerPeliculas}>
               <h1>Películas : </h1>
               {element.known_for.map((pelis) => (
                 <>
